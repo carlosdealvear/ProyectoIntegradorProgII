@@ -48,10 +48,10 @@ const users = {
             img:"" 
         },
     ],
-    porId: function (id) {
+    porNombre: function (nombre) {
         let respuesta = []
         for (let i = 0; i < users.users.length; i++) {
-            if (users.users[i].id == id) {
+            if (users.users[i].nombre == nombre) {
                 respuesta.push(users.users[i])
             }
         }
