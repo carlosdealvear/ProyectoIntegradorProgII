@@ -1,0 +1,66 @@
+const users = {
+
+    users: [
+    
+        {
+            id: "1",
+            nombre: "Franco",
+            apellido: "Leone",
+            email: "fleone@udesa.edu.ar",
+            password: "12345",
+            fecha:"2002-07-04",
+            img:""    
+        },
+        {
+            id: "2",
+            nombre: "Sophia",
+            apellido: "Kim",
+            email: "skim@udesa.edu.ar",
+            password: "12346",
+            fecha:"2002-09-12",
+            img:""       
+        },
+        {
+            id: "4",
+            nombre: "Carlos",
+            apellido: "De Alvear",
+            email: "cdealvear@udesa.edu.ar",
+            password: "12347",
+            fecha:"2002-01-10",
+            img:"" 
+        },
+        {
+            id: "5",
+            nombre: "Diego Armando",
+            apellido: "Maradona",
+            email: "dmaradona@udesa.edu.ar",
+            password: "12345",
+            fecha:"1960-10-30",
+            img:""     
+        },
+        {
+            id: "7",
+            nombre: "Lionel Andres",
+            apellido: "Messi",
+            email: "lmessi@udesa.edu.ar",
+            password: "12345",
+            fecha:"1987-06-24",
+            img:"" 
+        },
+    ],
+    porId: function (id) {
+        let respuesta = []
+        for (let i = 0; i < users.users.length; i++) {
+            if (users.users[i].id == id) {
+                respuesta.push(users.users[i])
+            }
+        }
+        
+        return respuesta        
+    },
+    
+    }    
+    
+    
+    
+    module.exports = users
