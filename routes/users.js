@@ -1,28 +1,15 @@
 var express = require('express');
 var router = express.Router();
+const usersController = require("../controllers/usersController")
 
-let users = require("../module/users")
+router.get("/login", usersController.login)
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+router.get("/register", usersController.register)
 
-/* GET users listing. */
-router.get('/index', function(req, res, next) {
-  res.send(users.users);
-});
+router.post('/store', usersController.store);
 
-/* GET ID listing. */
-router.get('/nombre/:nombre', function(req, res, next) {
-  let nombre = req.params.nombre;
-  let usuario = users.porNombre(nombre)
-  if (usuario.length > 0) {
-    res.send(usuario)
-  } else {
-    
-  }
-  res.send("no hay usuarios con el nombre solicitado");
-});
+router.post('/ingresar', usersController.ingresar);
+
+router.get('/logout', usersController.logout);
 
 module.exports = router;
