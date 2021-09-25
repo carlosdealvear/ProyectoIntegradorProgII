@@ -58,13 +58,18 @@
     <main>
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
-                <form action="">
-
-
-                    <h2>(Formulario de login)</h2>
-                
-                
-                </form>
+                <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Su Email</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                      <small id="emailHelp" class="form-text text-muted">Esta informacion nunca sera compartida con nadie.</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Contraseña</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                  </form>
             </div>
         </div>
     </main>
