@@ -9,7 +9,8 @@ const users = {
             email: "fleone@udesa.edu.ar",
             password: "12345",
             fecha:"2002-07-04",
-            img:""    
+            img:"",
+            usuario:"francoleone1"
         },
         {
             id: "2",
@@ -18,7 +19,8 @@ const users = {
             email: "skim@udesa.edu.ar",
             password: "12346",
             fecha:"2002-09-12",
-            img:""       
+            img:"",
+            usuario:"sophia.kim"       
         },
         {
             id: "4",
@@ -27,7 +29,8 @@ const users = {
             email: "cdealvear@udesa.edu.ar",
             password: "12347",
             fecha:"2002-01-10",
-            img:"" 
+            img:"",
+            usuario:"carlitosdealvear" 
         },
         {
             id: "5",
@@ -36,7 +39,8 @@ const users = {
             email: "dmaradona@udesa.edu.ar",
             password: "12345",
             fecha:"1960-10-30",
-            img:""     
+            img:"",
+            usuario:"eldiego1986"     
         },
         {
             id: "7",
@@ -45,7 +49,8 @@ const users = {
             email: "lmessi@udesa.edu.ar",
             password: "12345",
             fecha:"1987-06-24",
-            img:"" 
+            img:"",
+            usuario:"leomessi123" 
         },
     ],
     porNombre: function (nombre) {
