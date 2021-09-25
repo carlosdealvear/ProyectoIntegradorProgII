@@ -92,6 +92,16 @@ INSERT INTO comentarios VALUES(default,"2021-11-03 08:00:00","Un placer!!","7","
 INSERT INTO comentarios VALUES(default,"2021-11-03 08:00:00","Que lindo equipo!","7","11");
 INSERT INTO comentarios VALUES(default,"2021-11-03 08:00:00","ganadores!!","7","10");
 
+ALTER TABLE usuarios
+ ADD username VARCHAR(40) NOT NULL ;
+ 
+ UPDATE `Falsebook`.`usuarios` SET `username` = 'francoleone1' WHERE (`id` = '1');
+ UPDATE `Falsebook`.`usuarios` SET `username` = 'sophia.kim' WHERE (`id` = '2');
+ UPDATE `Falsebook`.`usuarios` SET `username` = 'carlitosdealvear' WHERE (`id` = '4');
+ UPDATE `Falsebook`.`usuarios` SET `username` = 'eldiego1986' WHERE (`id` = '5');
+ UPDATE `Falsebook`.`usuarios` SET `username` = 'leomessi123' WHERE (`id` = '7');
+ 
+
 
  
 
