@@ -1,0 +1,67 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+/* FONTS */
+
+header.uk-background-primary {
+    background-color: rgb(69, 212, 69);
+    color: black;
+}
+
+div.uk-navbar-left a{
+    color: black;
+    font-size: 35px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    font-weight: bold;
+}
+h2.logo{
+    margin-top: 25px;
+}
+
+li a{
+    color: black;
+    font-size: 14px;
+    
+}
+
+div.uk-navbar-right a{
+    font-size: 14px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.uk-navbar-center{
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 3%;
+    padding-right: 100px;
+    
+}
+.uk-navbar-center li{
+    padding: 20px;
+    list-style: none;
+
+}
+li{
+    padding: 10px;
+    list-style: none;
+    color: black;
+}
+
+.uk-position-bottom{
+    background-color: rgb(69, 212, 69);
+}
+.dispoLogo{
+    margin-right: 7px;
+    margin-top: 7px;
+    object-fit: cover;
+    width: 60px;
+    height: 60px;
+    border-radius: 30%;
+    margin: 25px 3px;
+}
+
+div.form-group{
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
