@@ -1,8 +1,6 @@
-const { Router } = require("express");
-
 const indexController = {
     index: function (req, res) {
-        app.get('/', (req,res) => {res.render("index")}
+        return res.send("La red social numero uno a nivel mundial"
         );
     },
 };
