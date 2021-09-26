@@ -1,33 +1,22 @@
 var express = require('express');
+const { post } = require('../app');
 var router = express.Router();
-const productController = require("../controllers/postController")
+const postController = require('../controllers/postController'); 
+const posts = require('../module/posteos');
 
+router.get('/', postController.index);
 
-
-/* GET homee page. */
-
-
-router.get("/", postController.principal)
-
-router.get('/id/:id', postController.producto) 
-
-router.get('/add/:id', postController.add)
-
-router.get("/editar/:id", postController.editar)
-
-router.post("/edit", postController.edit)
-
-router.post("/store", postController.store)
-
-router.post("/comentario", postController.comentario)
-
-router.post('/borrar/:id', postController.borrar);
+/*Get user listing. */
+router.get('/post/:post', function (req, res, next){
+    let post = req.params.posts; 
+    let posteos = posts.porId(posts)
+    if (posts.length > 0) {
+        res.send(posteos)
+    } else{
+        res.send('no hay un posteo ' + posts)
+    }
+    ;
+}); 
 
 
 module.exports = router;
-
-
-/* Codigo de Play ground
- router.get('/'), (req, res) => {
-    return res.send('Index de Productos');
-};*/
