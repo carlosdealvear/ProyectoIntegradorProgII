@@ -1,27 +1,18 @@
-const data = require('../module/posteos')
-
-const postController = {
-    index: function (req, res) {
-        return res.send(data.posts);
-    },
-    show: function (req, res) {
-        let id = req.params.id;
-        let resultado = '';
-
-        if(id > data.posts.length){
-            resultado = 'no tenemos'
-            return res.send(resultado)
-        }   else{
-                for (let index = 0; index < data.posts.length; i++) {           
-                    if (condition) {
-                        
-                    }
-                    
-                }
-        }
-
-        return res.send(data.posts);
-    },
+const posts = require('../module/posts');
+const users = require('../module/users');
+const comments = require('../module/comentarios');
+const controller = {
+  mostrarAgregarPost: function (req, res) {
+    res.render("partials/agregarPost");
+  },
+  mostrarDetallePost: function (req, res) {
+    for (let i = 0; i < posts.list.length; i++) {
+      const element = posts.list[i];
+      if (element.id == req.params.id) {
+        res.render("partials/editarPost", { posts: element });
+      }
+    }
+  },
 };
 
 module.exports = postController;

@@ -1,22 +1,9 @@
-var express = require('express');
-const { post } = require('../app');
+var express = require("express");
 var router = express.Router();
-const postController = require('../controllers/postController'); 
-const posts = require('../module/posteos');
+var controller = require("../controllers/postController");
+var posts = require("../module/posts");
 
-router.get('/', postController.index);
-
-/*Get user listing. */
-router.get('/post/:post', function (req, res, next){
-    let post = req.params.posts; 
-    let posteos = posts.porId(posts)
-    if (posts.length > 0) {
-        res.send(posteos)
-    } else{
-        res.send('no hay un posteo ' + posts)
-    }
-    ;
-}); 
-
+router.get("/agregarPost", controller.mostrarAgregarPost);
+router.get("/editarPost/:id", controller.mostrarDetallePost);
 
 module.exports = router;
