@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dispo</title>
+    <title>DISPO</title>
     <link rel="icon"
         href="https://w7.pngwing.com/pngs/624/811/png-transparent-computer-icons-facebook-social-media-f-logo-cross-brand.png"
         type="image/x-icon">
@@ -34,8 +34,9 @@
         <section class=" uk-container uk-container-large">
             <div class="">
                 <nav class="" uk-navbar>
+                    <img class="dispoLogo" src="../logo/dispoLogo.png" alt="">
                     <div class="uk-navbar-left">
-                        <h2 class="logo"><a href="index.html">Dispo</a></h2>
+                        <h2 class="logo"><a href="index.html">DISPO</a></h2>
                     </div>
                     <div class="uk-navbar-center">
                         <ul class="uk-flex uk-flex-between uk-flex-middle">
@@ -61,14 +62,36 @@
             <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
                 <form action="">
                     
-                    <h2>(Formulario de registración)</h2>
-            
+                    <h2>Registración</h2>
+                    <div class="form-group">
+                        <label for="exampleInputNombre1">Nombre</label>
+                        <input type="nombre" class="form-control" id="exampleInputNombre1" placeholder="Ingrese su nombre">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputApellido1"> Apellido</label>
+                        <input type="apellido" class="form-control" id="exampleInputApellido1" placeholder="Ingrese su apellido">
+                      </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Su Email</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su email">
+                      <small id="emailHelp" class="form-text text-muted">Esta informacion nunca sera compartida con nadie.</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Contraseña</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingrese su contraseña">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputFechaDeNacimiento1">Fecha de Nacimiento</label>
+                        <input type="FechaDeNacimiento" class="form-control" id="exampleInputFechaDeNacimiento1" placeholder="Ingrese la fecha">
+                    </div>
+
+                    <button type="submit" class="botonEnviar">Enviar</button>
                 </form>
             </div>
         </div>
     </main>
 
-    <footer class="uk-position-bottom uk-position-fixed uk-background-primary uk-flex uk-flex-between uk-flex-middle">
+    <footer class="uk-position-bottom">
         <ul class="uk-width-1-6 uk-flex uk-flex-middle uk-flex-around uk-height-1-1 uk-margin-remove uk-padding-remove">
             <li><a href="" uk-icon="instagram"></a></li>
             <li><a href="" uk-icon="facebook"></a></li>

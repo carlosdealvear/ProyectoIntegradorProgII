@@ -1,3 +1,7 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+/* FONTS */
+
 article.post{
     border: 1px solid lightgray;
     border-radius: 10px;
@@ -67,21 +71,65 @@ article.post div.post-comentarios ul li p{
     margin: 0 5px;
 }
 
+
 header.uk-background-primary {
-    background-color: green;
+    background-color: rgb(69, 212, 69);
     color: black;
 }
 
 div.uk-navbar-left a{
     color: black;
-    font-size: 90 px;
+    font-size: 35px;
     font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 li a{
     color: black;
+    font-size: 14px;
 }
 
 div.uk-navbar-right a{
+    font-size: 14px;
     color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2.logo{
+    margin-top: 25px;
+}
+
+.uk-navbar-center{
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 3%;
+    padding-right: 100px;
+    
+}
+.uk-navbar-center li{
+    padding: 20px;
+    list-style: none;
+}
+li{
+    padding: 10px;
+    list-style: none;
+    color: black;
+}
+
+.uk-position-bottom{
+    background-color: rgb(69, 212, 69);
+}
+.dispoLogo{
+    margin-right: 7px;
+    margin-top: 7px;
+    object-fit: cover;
+    width: 60px;
+    height: 60px;
+    border-radius: 30%;
+    margin: 25px 3px;
+}
+
+div.form-group{
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
