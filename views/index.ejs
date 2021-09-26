@@ -30,32 +30,8 @@
 </head>
 
 <body>
-    <header class="uk-background-primary">
-        <section class=" uk-container uk-container-large">
-            <div class="">
-                <nav class="" uk-navbar>
-                    <img class="dispoLogo" src="../public/images/dispoLogo.png" alt="">
-                    <div class="uk-navbar-left">
-                        <h2 class="logo"><a href="index.html">DISPO</a></h2>
-                    </div>
-                    <div class="uk-navbar-center">
-                        <ul class="uk-flex uk-flex-between uk-flex-middle">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="registracion.html">Registro</a></li>
-                            <li><a href="login.html">Login</a></li>
-                        </ul>
-                    </div>
-                    <div class="uk-navbar-right">
-                        <a href="agregarPost.html">Agregar post</a>
-                        <form action="" class="uk-search uk-search-default">
-                            <span uk-search-icon></span>
-                            <input type="search" class="uk-search-input" placeholder="Buscar...">
-                        </form>
-                    </div>
-                </nav>
-            </div>
-        </section>
-    </header>
+   
+    <%-include('../partials/headerLogueado')%>
 
     <main>
         <div class="uk-section uk-section-small">
@@ -64,9 +40,10 @@
                     <article class="post uk-card-default uk-flex uk-flex-column">
                         <div class="info-usuario uk-flex ">
                             <div>
-                                <img src="https://via.placeholder.com/40" alt="">
+                                <img src="../public/images/carlos.jpeg" alt="">
                             </div>
-                            <h4><a href="detalleUsuario.html">Usuario</a></h4>
+                            <h4><a href="/index">Usuario</a></h4>
+                            
                             
                         </div>
                         <div class="post-body uk-flex uk-flex-center">
@@ -104,7 +81,7 @@
                     <article class="post uk-card-default uk-flex uk-flex-column">
                         <div class="info-usuario uk-flex ">
                             <div>
-                                <img src="https://via.placeholder.com/40" alt="">
+                                <img src="../public/images/franco.png" alt="">
                             </div>
                             <h4><a href="detalleUsuario.html">Usuario</a></h4>
                     
@@ -144,7 +121,7 @@
                     <article class="post uk-card-default uk-flex uk-flex-column">
                         <div class="info-usuario uk-flex ">
                             <div>
-                                <img src="https://via.placeholder.com/40" alt="">
+                                <img src="../public/images/sophi.png" alt="">
                             </div>
                             <h4><a href="detalleUsuario.html">Usuario</a></h4>
                     
@@ -184,7 +161,7 @@
                     <article class="post uk-card-default uk-flex uk-flex-column">
                         <div class="info-usuario uk-flex ">
                             <div>
-                                <img src="https://via.placeholder.com/40" alt="">
+                                <img src="../public/images/user2.jpeg" alt="">
                             </div>
                             <h4><a href="detalleUsuario.html">Usuario</a></h4>
                     
@@ -224,7 +201,7 @@
                     <article class="post uk-card-default uk-flex uk-flex-column">
                         <div class="info-usuario uk-flex ">
                             <div>
-                                <img src="https://via.placeholder.com/40" alt="">
+                                <img src="../public/images/user1.jpeg" alt="">
                             </div>
                             <h4><a href="detalleUsuario.html">Usuario</a></h4>
                     
@@ -269,16 +246,18 @@
     </main>
 
     <footer class="uk-position-bottom">
-        <ul class="uk-width-1-6 uk-flex uk-flex-middle uk-flex-around uk-height-1-1 uk-margin-remove uk-padding-remove">
+       <div class="footer">
+         <ul class="uk-width-1-6 uk-flex uk-flex-middle uk-flex-around uk-height-1-1 uk-margin-remove uk-padding-remove">
             <li><a href="" uk-icon="instagram"></a></li>
             <li><a href="" uk-icon="facebook"></a></li>
             <li><a href="" uk-icon="twitter"></a></li>
-        </ul>
-        <ul class="uk-width-1-3 uk-flex uk-flex-middle uk-flex-between uk-height-1-1 uk-margin-remove uk-padding-remove">
-            <li>Martin Hernandez</li>
-            <li>Lucia Perez</li>
-            <li>Gaston Sanchez</li>
-        </ul>
+         </ul>
+    <ul class="uk-width-1-3 uk-flex uk-flex-middle uk-flex-between uk-height-1-1 uk-margin-remove uk-padding-remove">
+        <li>Martin Hernandez</li>
+        <li>Lucia Perez</li>
+        <li>Gaston Sanchez</li>
+    </ul>
+      </div>
     </footer>
 
 </body>
