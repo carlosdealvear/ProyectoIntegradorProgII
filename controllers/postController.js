@@ -2,7 +2,7 @@ const posts = require('../module/posts');
 const users = require('../module/users');
 const comentarios = require('../module/comentarios');
 
-const controller = {
+const postController = {
   mostrarAgregarPost: function (req, res) {
     res.render("agregarPost");
   },
@@ -16,4 +16,5 @@ const controller = {
   },
 };
 
-module.exports = controller;
+module.exports = postController;
+

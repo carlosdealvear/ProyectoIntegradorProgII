@@ -2,7 +2,7 @@ const posts = require('../module/posts');
 const users = require('../module/users');
 const comentarios = require('../module/comentarios');
 
-const controller = {
+const usersController = {
   mostrarLogin: function (req, res) {
     res.render("login");
   },
@@ -29,4 +29,4 @@ const controller = {
   },
 };
 
-module.exports = controller;
+module.exports = usersController;
