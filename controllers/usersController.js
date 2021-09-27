@@ -2,7 +2,7 @@ const posts = require('../module/posts');
 const users = require('../module/users');
 const comentarios = require('../module/comentarios');
 
-const usersController = {
+const controller = {
   mostrarLogin: function (req, res) {
     res.render("login");
   },
@@ -15,7 +15,7 @@ const usersController = {
     var user = users.findUsername(username);
     var usernamePost = posts.findUsername(username);
     if (user) {
-      res.render("social/detalleUsuario", { user: user, usernamePost });
+      res.render("detalleUsuario", { user: user, usernamePost });
     } else {
       return "error";
     }
@@ -29,4 +29,4 @@ const usersController = {
   },
 };
 
-module.exports = usersController;
+module.exports = controller;
