@@ -4,10 +4,10 @@ const comentarios = require('../module/comentarios');
 
 const usersController = {
   mostrarLogin: function (req, res) {
-    res.render("login");
+    res.render('login');
   },
   mostrarRegister: function (req, res) {
-    res.render("registracion");
+    res.render('registracion');
   },
   
   mostrarDetalleUsuario: function (req, res) {
@@ -15,17 +15,17 @@ const usersController = {
     var user = users.findUsername(username);
     var usernamePost = posts.findUsername(username);
     if (user) {
-      res.render("detalleUsuario", { user: user, usernamePost });
+      res.render('detalleUsuario', { user: user, usernamePost });
     } else {
       return "error";
     }
   },
 
   mostrarEditarPerfil: function (req, res) {
-    res.render("editarPerfil");
+    res.render('editarPerfil');
   },
   mostrarMiPerfil: function (req, res) {
-    res.render("miPerfil", {user: users, posts: posts});
+    res.render('miPerfil', {user: users, posts: posts});
   },
 };
 
