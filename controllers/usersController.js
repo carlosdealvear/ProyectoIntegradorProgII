@@ -4,10 +4,10 @@ const comments = require('../module/comentarios');
 
 const controller = {
   mostrarLogin: function (req, res) {
-    res.render("partials/login");
+    res.render("login");
   },
   mostrarRegister: function (req, res) {
-    res.render("partials/registracion");
+    res.render("registracion");
   },
   mostrarDetalleUsuario: function (req, res) {
     var username = req.params.username;
@@ -27,16 +27,16 @@ const controller = {
       }
     }
     if (user) {
-      res.render("partials/detalleUsuario", { user: users, posts: posts });
+      res.render("detalleUsuario", { user: users, posts: posts });
     } else {
       return "error";
     }
   },
   mostrarEditarPerfil: function (req, res) {
-    res.render("partials/editarPerfil");
+    res.render("editarPerfil");
   },
   mostrarMiPerfil: function (req, res) {
-    res.render("partials/miPerfil", {user: users, posts: posts});
+    res.render("miPerfil", {user: users, posts: posts});
   },
 };
 
