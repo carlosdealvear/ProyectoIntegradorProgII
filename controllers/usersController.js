@@ -14,14 +14,14 @@ const controller = {
     var user;
     var post = [];
 
-    for (let i = 0; i < users.list.length; i++) {
+    for (let i = 0; i < users.users.length; i++) {
       const element = users.list[i];
       if (element.username == username) {
         user = element;
       }
     }
     for (let i = 0; i < posts.list.length; i++) {
-      const element = posts.list[i];
+      const element = posts.posts[i];
       if (element.username == username) {
         post.push(element);
       }
