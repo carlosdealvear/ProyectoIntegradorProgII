@@ -1,6 +1,6 @@
 var express = require("express");
-let postController = require("../controllers/postController");
 var router = express.Router();
+let postController = require("../controllers/postController");
 
 router.get("/agregarPost", postController.mostrarAgregarPost);
 router.get("/detallePost/id/:id", postController.mostrarDetallePost);
