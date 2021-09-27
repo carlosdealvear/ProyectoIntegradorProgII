@@ -1,11 +1,11 @@
 var express = require("express");
 var router = express.Router();
-var controller = require("../controllers/usersController");
+var usersController = require("../controllers/usersController");
 
-router.get("/register", controller.mostrarRegister);
-router.get("/detalleUsuario/:username", controller.mostrarDetalleUsuario);
-router.get("/login", controller.mostrarLogin);
-router.get("/miPerfil", controller.mostrarMiPerfil);
-router.get("/editarPerfil", controller.mostrarEditarPerfil);
+router.get("/register", usersController.mostrarRegister);
+router.get("/detalleUsuario/:username", usersController.mostrarDetalleUsuario);
+router.get("/login", usersController.mostrarLogin);
+router.get("/miPerfil", usersController.mostrarMiPerfil);
+router.get("/editarPerfil", usersController.mostrarEditarPerfil);
 
 module.exports = router;

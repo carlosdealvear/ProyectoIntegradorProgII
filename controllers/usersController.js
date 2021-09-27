@@ -1,37 +1,26 @@
 const posts = require('../module/posts');
 const users = require('../module/users');
-const comments = require('../module/comentarios');
+const comentarios = require('../module/comentarios');
 
-const controller = {
+const usersController = {
   mostrarLogin: function (req, res) {
     res.render("login");
   },
   mostrarRegister: function (req, res) {
     res.render("registracion");
   },
+  
   mostrarDetalleUsuario: function (req, res) {
     var username = req.params.username;
-    var user;
-    var post = [];
-
-    for (let i = 0; i < users.list.length; i++) {
-      const element = users.list[i];
-      if (element.username == username) {
-        user = element;
-      }
-    }
-    for (let i = 0; i < posts.list.length; i++) {
-      const element = posts.list[i];
-      if (element.username == username) {
-        post.push(element);
-      }
-    }
+    var user = users.findUsername(username);
+    var usernamePost = posts.findUsername(username);
     if (user) {
-      res.render("detalleUsuario", { user: users, posts: posts });
+      res.render("social/detalleUsuario", { user: user, usernamePost });
     } else {
       return "error";
     }
   },
+
   mostrarEditarPerfil: function (req, res) {
     res.render("editarPerfil");
   },
@@ -40,4 +29,4 @@ const controller = {
   },
 };
 
-module.exports = controller;
+module.exports = usersController;
