@@ -9,7 +9,7 @@ const controller = {
     for (let i = 0; i < posts.list.length; i++) {
       const element = posts.list[i];
       if (element.id == req.params.id) {
-        res.render("partials/editarPost", { posts: element });
+        res.render("partials/detallesPost", { posts: element });
       }
     }
   },
