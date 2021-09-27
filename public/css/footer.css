@@ -1,7 +1,11 @@
-footer{
+footer {
     height: 40px;
     color: white;
     padding: 0 10px;
+    background-color: rgb(69, 212, 69);
+position: absolute;
+width: 100%;
+bottom: 0px;
 }
 
 footer ul{
