@@ -2,7 +2,7 @@ const posts = require('../module/posts');
 const users = require('../module/users');
 const comentarios = require('../module/comentarios');
 
-const controller = {
+const indexController = {
   mostrarIndex: function (req, res) {
     res.render("index", {posts: posts.posts, comentarios: comentarios.comentarios, users: users.users});
   },
@@ -11,4 +11,4 @@ const controller = {
   },
 };
 
-module.exports = controller;
+module.exports = indexController;
