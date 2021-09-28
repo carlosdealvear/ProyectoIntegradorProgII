@@ -1,71 +1,71 @@
 const users = {
 
     users: [
-    
+
         {
-            id: "1",
+            id: "0",
             nombre: "Franco",
             apellido: "Leone",
             email: "fleone@udesa.edu.ar",
             password: "12345",
-            fecha:"2002-07-04",
-            img:"",
-            usuario:"francoleone1"
+            fecha: "2002-07-04",
+            img: "/images/franco.png",
+            usuario: "francoleone1"
         },
         {
-            id: "2",
+            id: "1",
             nombre: "Brian",
             apellido: "Gomez",
             email: "bgomez@digitalhouse.com",
             password: "12346",
-            fecha:"2002-09-12",
-            img:"",
-            usuario:"brian.gomez"       
+            fecha: "2002-09-12",
+            img: "/images/sophi.png",
+            usuario: "brian.gomez"
         },
         {
-            id: "4",
+            id: "2",
             nombre: "Carlos",
             apellido: "De Alvear",
             email: "cdealvear@udesa.edu.ar",
             password: "12347",
-            fecha:"2002-01-10",
-            img:"",
-            usuario:"carlitosdealvear" 
+            fecha: "2002-01-10",
+            img: "/images/carlos.jpeg",
+            usuario: "carlitosdealvear"
         },
         {
-            id: "5",
+            id: "3",
             nombre: "Diego Armando",
             apellido: "Maradona",
             email: "dmaradona@udesa.edu.ar",
             password: "12345",
-            fecha:"1960-10-30",
-            img:"",
-            usuario:"eldiego1986"     
+            fecha: "1960-10-30",
+            img: "/images/diegoasado.jpeg",
+            usuario: "eldiego1986"
         },
         {
-            id: "7",
+            id: "4",
             nombre: "Lionel Andres",
             apellido: "Messi",
             email: "lmessi@udesa.edu.ar",
             password: "12345",
-            fecha:"1987-06-24",
-            img:"",
-            usuario:"leomessi123" 
+            fecha: "1987-06-24",
+            img: "/images/messi.jpeg",
+            usuario: "leomessi123"
         },
     ],
-    porNombre: function (nombre) {
-        let respuesta = []
+    porId: function (userId) {
         for (let i = 0; i < users.users.length; i++) {
-            if (users.users[i].nombre == nombre) {
-                respuesta.push(users.users[i])
+            const elstring = users.users[i];
+            if (users.users[i].id == userId) {
+                console.log(elstring)
+                return elstring;
+
             }
         }
-        
-        return respuesta        
     },
-    
-    }    
-    
-    
-    
-    module.exports = users
+
+}
+
+
+
+module.exports = users

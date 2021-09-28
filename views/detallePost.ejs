@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<%console.log(posts)  %> 
+<%console.log(postId)  %> 
 	<%-include("./partials/header")%>
 <body>
 	<%-include("./partials/headerLogueado")%>
@@ -9,12 +10,11 @@
             <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
                 <section class="uk-flex uk-width-2-3 detalle-container">
                     <article class="uk-width-2-3 uk-flex uk-flex-center uk-flex-middle detalle-post">
-                        <img src="https://via.placeholder.com/500x600" alt="Imagen del post" class="imagen-post ">
+                        <img src="<%= posts.img %> " alt="Imagen del post" class="imagen-post ">
                     </article>
                     <article class="uk-width-1-3 uk-flex uk-flex-column comentarios-detalle">
                         <div class="info-post uk-flex uk-flex-middle">
-                            <img src="https://via.placeholder.com/35" alt="Foto del usuario">
-                            <h3><a href="detalleUsuario.html">Nombre de usuario</a></h3>
+                            <h3><a href="detalleUsuario.html"><%= posts.usuario %> </a></h3>
                         </div>
                         <div class="lista-comentarios" >
                             <div class="comentario uk-flex uk-flex-middle uk-margin-small-top">

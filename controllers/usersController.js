@@ -11,15 +11,16 @@ const usersController = {
   },
   
   mostrarDetalleUsuario: function (req, res) {
-    var username = req.params.username;
-    var user = users.findUsername(username);
-    var usernamePost = posts.findUsername(username);
-    if (user) {
-      res.render('detalleUsuario', { user: user, usernamePost });
-    } else {
-      return "error";
-    }
-  },
+    let userId = req.params.id;
+    let user = users.porId(userId);
+    let postUsuario = posts.porId(userId);
+      if (user) {
+        res.render('detalleUsuario', { users: users.users, userId : userId, postUsuario}); 
+      } else {
+        return "error";
+      }
+    },
+
 
   mostrarEditarPerfil: function (req, res) {
     res.render('editarPerfil');
