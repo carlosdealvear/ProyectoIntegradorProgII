@@ -14,13 +14,13 @@ const users = {
         },
         {
             id: "2",
-            nombre: "Sophia",
-            apellido: "Kim",
-            email: "skim@udesa.edu.ar",
+            nombre: "Brian",
+            apellido: "Gomez",
+            email: "bgomez@digitalhouse.com",
             password: "12346",
             fecha:"2002-09-12",
             img:"",
-            usuario:"sophia.kim"       
+            usuario:"brian.gomez"       
         },
         {
             id: "4",
