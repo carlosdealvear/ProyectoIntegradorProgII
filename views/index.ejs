@@ -19,7 +19,7 @@
                             
                         </div>
                         <div class="post-body uk-flex uk-flex-center">
-                            <a href="users/detalleUsuario/">
+                            <a href="/post/detallePost/id/<%= posts[index].id  %>">
                                 <img src="<%= posts[index].img %> " alt="">
                             </a>
                         </div>
@@ -38,14 +38,15 @@
                         <div class="post-comentarios">
                             <h6>Comentarios</h6>
                             <ul>
+                          
+                                <% for(i=0;i<comentarios.length; i++){ %>
+                                    <% if(posts[index].id == comentarios[i].postId) {%> 
                                 <li>
-                                    <a href="detalleUsuario.ejs">Usuario</a>
-                                    <p>Comentario</p>
+                                    <a href="detalleUsuario.ejs"><%= comentarios[i].usuario %> </a>
+                                    <p><%= comentarios[i].descrip%> </p>
                                 </li>
-                                <li>
-                                    <a href="detalleUsuario.ejs">Usuario</a>
-                                    <p>Comentario</p>
-                                </li>
+                                <%} }%>
+                              
                                 <a href="">Ver más...</a>
                             </ul>
                         </div>

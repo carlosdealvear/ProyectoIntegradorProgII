@@ -57,7 +57,7 @@ const users = {
         for (let i = 0; i < users.users.length; i++) {
             const elstring = users.users[i];
             if (users.users[i].id == userId) {
-                console.log(elstring)
+                console.log(elstring);
                 return elstring;
 
             }
