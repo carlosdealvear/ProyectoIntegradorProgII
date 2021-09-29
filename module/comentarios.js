@@ -8,7 +8,7 @@ const comentarios = {
             descrip: "dale que se aprueba!",
             fecha:"2021-11-03 08:00:00",
             postId:"4",
-            usuario:"rrr" 
+            usuario:"francoleone1" 
         },
         {
             id: "2",
@@ -16,7 +16,7 @@ const comentarios = {
             descrip: "Eee inviten malaonda",
             fecha:"2021-10-03 10:20:31",
             postId:"5", 
-            usuario:"rrr"      
+            usuario:"francoleone1"    
         },
         {
             id: "3",
@@ -24,7 +24,7 @@ const comentarios = {
             descrip: "grande leo!",
             fecha:"2021-12-23 12:01:54",
             postId:"10",    
-            usuario:"rrr"    
+            usuario:"francoleone1"   
         },
         {
             id: "4",
@@ -32,7 +32,7 @@ const comentarios = {
             descrip: "ponete las pilas!",
             fecha:"2021-11-03 08:00:00",
             postId:"6",     
-            usuario:"rrr"    
+            usuario:"francoleone1"  
         },
         {
             id: "5",
@@ -40,7 +40,7 @@ const comentarios = {
             descrip: "muy buena tardee",
             fecha:"2021-11-03 08:00:00",
             postId:"1",
-            usuario:"rrr"             
+            usuario:"brian.gomez"             
         },
         {
             id: "6",
@@ -48,7 +48,7 @@ const comentarios = {
             descrip: "que pinta!",
             fecha:"2021-11-03 08:00:00",
             postId:"10",
-            usuario:"rrr"         
+            usuario:"brian.gomez"        
         },
         {
             id: "7",
@@ -56,7 +56,7 @@ const comentarios = {
             descrip: "grande diegote!",
             fecha:"2021-11-03 08:00:00",
             postId:"8",
-            usuario:"rrr"       
+            usuario:"brian.gomez"       
         },
         {
             id: "8",
@@ -64,7 +64,7 @@ const comentarios = {
             descrip: "daale carloss!",
             fecha:"2021-11-03 08:00:00",
             postId:"7",
-            usuario:"rrr"         
+            usuario:"brian.gomez"       
         },
         {
             id: "9",
@@ -72,7 +72,7 @@ const comentarios = {
             descrip: "aver si aprobamos",
             fecha:"2021-11-03 08:00:00",
             postId:"1",
-            usuario:"rrr"         
+            usuario:"carlitosdealvear"        
         },
         {
             id: "10",
@@ -80,7 +80,7 @@ const comentarios = {
             descrip: "te pidio el una foto??",
             fecha:"2021-11-03 08:00:00",
             postId:"2",
-            usuario:"rrr"         
+            usuario:"carlitosdealvear"         
         },
         {
             id: "11",
@@ -88,7 +88,7 @@ const comentarios = {
             descrip: "que equipazo",
             fecha:"2021-11-03 08:00:00",
             postId:"11",
-            usuario:"rrr"         
+            usuario:"carlitosdealvear"         
         },
         {
             id: "12",
@@ -96,7 +96,7 @@ const comentarios = {
             descrip: "que alegria",
             fecha:"2021-11-03 08:00:00",
             postId:"8",
-            usuario:"rrr"         
+            usuario:"carlitosdealvear"      
         },
         {
             id: "13",
@@ -104,7 +104,7 @@ const comentarios = {
             descrip: "noo que ganas!",
             fecha:"2021-09-22",
             postId:"5",
-            usuario:"rrr"          
+            usuario:"carlitosdealvear"   
         },
         {
             id: "14",
@@ -112,7 +112,7 @@ const comentarios = {
             descrip: "facha leo",
             fecha:"2021-11-03 08:00:00",
             postId:"2",     
-            usuario:"rrr"         
+            usuario:"eldiego1986"         
         },
         {
             id: "15",
@@ -120,7 +120,7 @@ const comentarios = {
             descrip: "Un placer!!",
             fecha:"2021-11-03 08:00:00",
             postId:"5",
-            usuario:"rrr"             
+            usuario:"eldiego1986"             
         },
         {
             id: "16",
@@ -128,7 +128,7 @@ const comentarios = {
             descrip: "Que lindo equipo!",
             fecha:"2021-11-03 08:00:00",
             postId:"11",
-            usuario:"rrr"         
+            usuario:"eldiego1986"          
         },
         {
             id: "17",
@@ -136,7 +136,7 @@ const comentarios = {
             descrip: "ganadores",
             fecha:"2021-11-03 08:00:00",
             postId:"10",
-            usuario:"rrr"         
+            usuario:"eldiego1986"           
         },
         {
             id: "18",
@@ -144,7 +144,7 @@ const comentarios = {
             descrip: "facha leo",
             fecha:"2021-11-03 08:00:00",
             postId:"2",
-            usuario:"rrr"         
+            usuario:"leomessi123"         
         },
         {
             id: "19",
@@ -152,7 +152,7 @@ const comentarios = {
             descrip: "Un placer!!",
             fecha:"2021-11-03 08:00:00",
             postId:"5",
-            usuario:"rrr"         
+            usuario:"leomessi123"           
         },
         {
             id: "20",
@@ -160,7 +160,7 @@ const comentarios = {
             descrip: "Que lindo equipo!",
             fecha:"2021-11-03 08:00:00",
             postId:"11",
-            usuario:"rrr"         
+            usuario:"leomessi123"           
         },
         {
             id: "21",
@@ -168,7 +168,7 @@ const comentarios = {
             descrip: "ganadores!!",
             fecha:"2021-11-03 08:00:00",
             postId:"10",
-            usuario:"rrr"         
+            usuario:"leomessi123"        
         },
   
     ],
