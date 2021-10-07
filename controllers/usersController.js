@@ -15,7 +15,7 @@ const usersController = {
     let user = users.porId(userId);
     let postUsuario = posts.porId(userId);
       if (user) {
-        res.render('detalleUsuario', { users: users.users, userId : userId, postUsuario}); 
+        res.render('detalleUsuario', { users: users.users, userId : userId, postUsuario, posts: posts.posts}); 
       } else {
         return "error";
       }

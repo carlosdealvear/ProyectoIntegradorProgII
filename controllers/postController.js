@@ -11,7 +11,7 @@ const postController = {
     for (let i = 0; i < posts.posts.length; i++) {
       const element = posts.posts[i];
       if (element.id == postId) {                    
-        res.render('detallePost', { posts: element, postId: postId });     
+        res.render('detallePost', { posts: element, postId: postId, comentarios: comentarios.comentarios });     
       }
     }
   },
