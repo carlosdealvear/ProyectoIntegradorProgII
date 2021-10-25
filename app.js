@@ -40,4 +40,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.use(session( { secret: "Nuestro mensaje secreto",
+resave: false,
+saveUninitialized: true }));
+
 module.exports = app;
