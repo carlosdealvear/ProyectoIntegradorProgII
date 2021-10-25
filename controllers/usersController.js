@@ -2,6 +2,7 @@ const posts = require('../module/posts');
 const users = require('../module/users');
 const comentarios = require('../module/comentarios');
 
+
 const usersController = {
   mostrarLogin: function (req, res) {
     res.render('login');
