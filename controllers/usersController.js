@@ -1,7 +1,7 @@
 const posts = require('../module/posts');
 const users = require('../module/users');
 const comentarios = require('../module/comentarios');
-const session = require('express-session'); 
+
 
 const usersController = {
   mostrarLogin: function (req, res) {
