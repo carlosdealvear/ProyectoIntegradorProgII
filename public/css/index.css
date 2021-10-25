@@ -116,9 +116,9 @@ li{
     color: black;
 }
 
-.footer{
+footer.uk-background-primary{
     background-color: rgb(69, 212, 69);
-    position: absolute;
+    position: bottom;
     width: 100%;
     bottom: 0px;
 }
@@ -135,4 +135,7 @@ li{
 div.form-group{
     color: black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.general {
+    background-color: black;
 }
