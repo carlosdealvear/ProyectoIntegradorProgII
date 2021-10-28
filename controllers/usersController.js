@@ -7,7 +7,7 @@ const usersController = {
   mostrarLogin: function (req, res) {
     res.render('login');
   },
-  mostrarRegister: function (req, res) {
+  mostrarRegistracion: function (req, res) {
     res.render('registracion');
   },
   
