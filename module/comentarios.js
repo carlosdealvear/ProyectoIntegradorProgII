@@ -4,7 +4,7 @@ const comentarios = {
     
         {
             id: "1",
-            userId: "1",
+            userId: "0",
             descrip: "dale que se aprueba!",
             fecha:"2021-11-03 08:00:00",
             postId:"4",
@@ -12,7 +12,7 @@ const comentarios = {
         },
         {
             id: "2",
-            userId: "1",
+            userId: "0",
             descrip: "Eee inviten malaonda",
             fecha:"2021-10-03 10:20:31",
             postId:"5", 
@@ -20,7 +20,7 @@ const comentarios = {
         },
         {
             id: "3",
-            userId: "1",
+            userId: "0",
             descrip: "grande leo!",
             fecha:"2021-12-23 12:01:54",
             postId:"10",    
@@ -28,7 +28,7 @@ const comentarios = {
         },
         {
             id: "4",
-            userId: "1",
+            userId: "0",
             descrip: "ponete las pilas!",
             fecha:"2021-11-03 08:00:00",
             postId:"6",     
@@ -36,7 +36,7 @@ const comentarios = {
         },
         {
             id: "5",
-            userId: "2",
+            userId: "1",
             descrip: "muy buena tardee",
             fecha:"2021-11-03 08:00:00",
             postId:"1",
@@ -44,7 +44,7 @@ const comentarios = {
         },
         {
             id: "6",
-            userId: "2",
+            userId: "1",
             descrip: "que pinta!",
             fecha:"2021-11-03 08:00:00",
             postId:"10",
@@ -52,7 +52,7 @@ const comentarios = {
         },
         {
             id: "7",
-            userId: "2",
+            userId: "1",
             descrip: "grande diegote!",
             fecha:"2021-11-03 08:00:00",
             postId:"8",
@@ -60,7 +60,7 @@ const comentarios = {
         },
         {
             id: "8",
-            userId: "2",
+            userId: "1",
             descrip: "daale carloss!",
             fecha:"2021-11-03 08:00:00",
             postId:"7",
@@ -68,7 +68,7 @@ const comentarios = {
         },
         {
             id: "9",
-            userId: "4",
+            userId: "2",
             descrip: "aver si aprobamos",
             fecha:"2021-11-03 08:00:00",
             postId:"1",
@@ -76,7 +76,7 @@ const comentarios = {
         },
         {
             id: "10",
-            userId: "4",
+            userId: "2",
             descrip: "te pidio el una foto??",
             fecha:"2021-11-03 08:00:00",
             postId:"2",
@@ -84,7 +84,7 @@ const comentarios = {
         },
         {
             id: "11",
-            userId: "4",
+            userId: "2",
             descrip: "que equipazo",
             fecha:"2021-11-03 08:00:00",
             postId:"11",
@@ -92,7 +92,7 @@ const comentarios = {
         },
         {
             id: "12",
-            userId: "4",
+            userId: "2",
             descrip: "que alegria",
             fecha:"2021-11-03 08:00:00",
             postId:"8",
@@ -100,7 +100,7 @@ const comentarios = {
         },
         {
             id: "13",
-            userId: "4",
+            userId: "2",
             descrip: "noo que ganas!",
             fecha:"2021-09-22",
             postId:"5",
@@ -108,7 +108,7 @@ const comentarios = {
         },
         {
             id: "14",
-            userId: "5",
+            userId: "3",
             descrip: "facha leo",
             fecha:"2021-11-03 08:00:00",
             postId:"2",     
@@ -116,7 +116,7 @@ const comentarios = {
         },
         {
             id: "15",
-            userId: "5",
+            userId: "3",
             descrip: "Un placer!!",
             fecha:"2021-11-03 08:00:00",
             postId:"5",
@@ -124,7 +124,7 @@ const comentarios = {
         },
         {
             id: "16",
-            userId: "5",
+            userId: "3",
             descrip: "Que lindo equipo!",
             fecha:"2021-11-03 08:00:00",
             postId:"11",
@@ -132,7 +132,7 @@ const comentarios = {
         },
         {
             id: "17",
-            userId: "5",
+            userId: "3",
             descrip: "ganadores",
             fecha:"2021-11-03 08:00:00",
             postId:"10",
@@ -140,32 +140,32 @@ const comentarios = {
         },
         {
             id: "18",
-            userId: "7",
-            descrip: "facha leo",
+            userId: "4",
+            descrip: "nasheee",
             fecha:"2021-11-03 08:00:00",
             postId:"2",
             usuario:"leomessi123"         
         },
         {
             id: "19",
-            userId: "7",
-            descrip: "Un placer!!",
+            userId: "4",
+            descrip: "que copado!",
             fecha:"2021-11-03 08:00:00",
             postId:"5",
             usuario:"leomessi123"           
         },
         {
             id: "20",
-            userId: "7",
-            descrip: "Que lindo equipo!",
+            userId: "4",
+            descrip: "bien ahi",
             fecha:"2021-11-03 08:00:00",
             postId:"11",
             usuario:"leomessi123"           
         },
         {
             id: "21",
-            userId: "7",
-            descrip: "ganadores!!",
+            userId: "4",
+            descrip: "<3",
             fecha:"2021-11-03 08:00:00",
             postId:"10",
             usuario:"leomessi123"        
