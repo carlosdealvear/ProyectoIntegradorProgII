@@ -26,7 +26,7 @@ module.exports = function(sequelize, dataTypes){
 	    underscored: true,        
 	}
     
-       const Post = sequelize.define(alias, columnas, conf);
+       const posts = sequelize.define(alias, columnas, conf);
     
        return posts;
     }

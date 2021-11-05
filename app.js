@@ -8,6 +8,7 @@ const session = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/user');
 var postRouter = require('./routes/post');
+const db = require('./database/models');
 
 var app = express();
 
@@ -44,6 +45,19 @@ app.use(function (err, req, res, next) {
     resave: false,
     saveUninitialized: true
   }));
+
+  //cookies
+app.use(function (req, res, next) {
+  if(req.cookies.id_usuario != undefined && req.session.user == undefined){
+    db.user.findByPk(req.cookies.id_usuario)
+    .then(user =>{
+      req.session.usuario = usuario.email
+      res.locals.usuario = req.session.usuario
+      return next()
+    })
+  }  
+  return next();
+})
 
   // render the error page
   res.status(err.status || 500);
