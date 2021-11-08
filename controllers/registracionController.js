@@ -21,7 +21,7 @@ const registracionController = {
 			})
 			.then(function (email) {
 
-				let existeMail = email;
+				 existeMail = email;
 
 				if (req.body.email == "") {
 					errores.message = "No puede estar vacio este campo";
