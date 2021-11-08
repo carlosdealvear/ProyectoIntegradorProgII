@@ -1,5 +1,5 @@
 module.exports = function(sequelize, dataTypes){
-	let alias = 'posts'; //Con este alias sequelize va a identificar internamente al archivo de modelo.
+	let alias = 'posts';
 	let columnas = {
 	    id:{
 		autoIncrement: true,
