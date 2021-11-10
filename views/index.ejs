@@ -45,12 +45,12 @@
                                 <% for(i=0;i<comentarios.length; i++){ %>
                                     <% if(posts[index].id == comentarios[i].postId) {%> 
                                 <li>
-                                    <a href="users/detalleUsuario/<%= posts[index].userId %> "><%= comentarios[i].usuario %> </a>
+                                    <a href="/users/detalleUsuario/<%= comentarios[i].userId %> "><%= comentarios[i].usuario %> </a> <%= comentarios[i].descrip %></a>
                                     <p><%= comentarios[i].descrip%> </p>
                                 </li>
                                 <%} }%>
                               
-                                <a href="">Ver más...</a>
+                                <a href="users/detalleUsuario/<%= posts[index].userId %> ">Ver más...</a>
                             </ul>
                         </div>
                     </article>
