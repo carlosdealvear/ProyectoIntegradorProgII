@@ -6,6 +6,11 @@
 header{
     height: 55px;
     padding-top: 10px;
+    display:  flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: green;
 }
 header section{
     height: 100%;
@@ -22,8 +27,7 @@ header a:hover{
     color: black;
     text-decoration: none;
 }
-.logo{
-    position: fixed;}
+
 .logo a{
     font-family: 'Fjalla One', sans-serif;
     color: black;
@@ -78,6 +82,7 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: black;
 }
 .container{
     max-width: 1170px;
@@ -91,3 +96,51 @@ ul{
     list-style: none;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&display=swap');
+
+
+li, a, button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+
+
+.logo{
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.nav__links {
+    list-style: none;
+}
+
+.nav__links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav__links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+    color: #0088a9;
+}
+
+button {
+    padding: 9px 25px;
+    background-color: black;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: green;
+}
+
+button:hover {
+    background-color: white;
+}
