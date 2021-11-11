@@ -14,7 +14,7 @@ const registracionController = {
 		let errores = {}
 		let existeMail;
 
-		db.users.findAll({
+		db.usuario.findAll({
 				where: {
 					email: req.body.email
 				}
@@ -37,7 +37,7 @@ const registracionController = {
 					res.render("registracion")
 				} else {
 					let encriptPass = bcrypt.hashSync(req.body.password, 10)
-					db.users.create({
+					db.usuario.create({
 							nombre: req.body.username,
 							email: req.body.email,
 							password: encriptPass,
@@ -72,7 +72,7 @@ const registracionController = {
 			res.locals.error = errors;
 			res.render("login")
 		} else {
-			db.users.findOne({
+			db.usuario.findOne({
 					where: {
 						email: req.body.email
 					}
