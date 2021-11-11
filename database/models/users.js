@@ -23,6 +23,8 @@ module.exports = function(sequelize, dataTypes){
         },
         img:{
             type: dataTypes.STRING,
+            allowNull: false,
+            defaultValue: "messi.jpeg",
         },
         username:{
             type: dataTypes.INTEGER,

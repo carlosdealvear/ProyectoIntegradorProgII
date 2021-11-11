@@ -6,54 +6,67 @@ let bcrypt = require('bcryptjs');
 // registracion
 
 const registracionController = {
-
 	registracion: function (req, res) {
 		res.render('registracion')
 	},
 	registrar: function (req, res) {
-		let errores = {}
-		let existeMail;
+		// db.usuario.findAll({
+		// 		where: {
+		// 			email: req.body.email
+		// 		}
+		// 	})
+		// 	.then(function (email) {
 
-		db.usuario.findAll({
-				where: {
-					email: req.body.email
-				}
-			})
-			.then(function (email) {
+		// 		 existeMail = email;
 
-				 existeMail = email;
-
-				if (req.body.email == "") {
-					errores.message = "No puede estar vacio este campo";
-					res.locals.error = errores;
-					res.render("registracion")
-				} else if (req.body.password == "") {
-					errores.message = "Falta la contraseña!!";
-					res.locals.error = errores;
-					res.render("registracion")
-				} else if (existeMail != "") { // != significa not equal to 
-					errores.message = "Este mail ya esta en uso.";
-					res.locals.error = errores;
-					res.render("registracion")
-				} else {
-					let encriptPass = bcrypt.hashSync(req.body.password, 10)
-					db.usuario.create({
-							nombre: req.body.username,
-							email: req.body.email,
-							password: encriptPass,
-							fecha: req.body.fecha,
-							createdAt: Date.now()
-						})
-						.then(_users => {
-							res.redirect('/')
-						})
-						.catch(err => {
-							console.log(err);
-							res.send(err)
-						})
-				}
-			})
-
+		// 		if (req.body.email == "") {
+		// 			errores.message = "No puede estar vacio este campo";
+		// 			res.locals.error = errores;
+		// 			res.render("registracion")
+		// 		} else if (req.body.password == "") {
+		// 			errores.message = "Falta la contraseña!!";
+		// 			res.locals.error = errores;
+		// 			res.render("registracion")
+		// 		} else if (existeMail != "") { // != significa not equal to 
+		// 			errores.message = "Este mail ya esta en uso.";
+		// 			res.locals.error = errores;
+		// 			res.render("registracion")
+		// 		} else {
+		// 			let encriptPass = bcrypt.hashSync(req.body.password, 10)
+		// 			db.usuario.create({
+		// 					nombre: req.body.username,
+		// 					email: req.body.email,
+		// 					password: encriptPass,
+		// 					fecha: req.body.fecha,
+		// 					createdAt: Date.now()
+		// 				})
+		// 				.then(_users => {
+		// 					res.redirect('/')
+		// 				})
+		// 				.catch(err => {
+		// 					console.log(err);
+		// 					res.send(err)
+		// 				})
+		// 		}
+		// 	})//
+	 req.body.password = bcrypt.hashSync(req.body.password)
+		const usuarioCreado ={ 
+			nombre:req.body.nombre ,
+			apellido:req.body.apellido ,
+			username:req.body.username ,
+			email:req.body.email ,
+			password:req.body.password ,
+			fecha:req.body.fecha,
+		} 
+		db.usuario.create (usuarioCreado)
+		.then (function (usuario){
+			return res.redirect ("/users/login")
+		}
+			)
+			.catch(err => {
+				console.log(err);
+				res.send(err) })
+   
 	},
 	//la parte del login etcetera
 	login: function (req, res) {

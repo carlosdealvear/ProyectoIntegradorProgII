@@ -52,11 +52,23 @@ app.use(function (req, res, next) {
     db.usuario.findByPk(req.cookies.id_usuario)
     .then(user =>{
       req.session.user = user;
-      res.locals.user = req.session.user;
+ return next();
     })
+  .catch(e => {
+    next(createError(e.status))
+  } ) 
   }  
-  return next();
+  else {next()}
+  
 })
+app.use(function(req, res, next){
+  if(req.session.user != undefined){
+    res.locals.user = req.session.user
+  }
+  next();
+})
+
+
 
   // render the error page
   res.status(err.status || 500);
