@@ -49,11 +49,10 @@ app.use(function (err, req, res, next) {
   //cookies
 app.use(function (req, res, next) {
   if(req.cookies.id_usuario != undefined && req.session.user == undefined){
-    db.user.findByPk(req.cookies.id_usuario)
+    db.usuario.findByPk(req.cookies.id_usuario)
     .then(user =>{
-      req.session.usuario = usuario.email
-      res.locals.usuario = req.session.usuario
-      return next()
+      req.session.user = user;
+      res.locals.user = req.session.user;
     })
   }  
   return next();
