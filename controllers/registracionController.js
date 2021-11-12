@@ -10,45 +10,6 @@ const registracionController = {
 		res.render('registracion')
 	},
 	registrar: function (req, res) {
-		// db.usuario.findAll({
-		// 		where: {
-		// 			email: req.body.email
-		// 		}
-		// 	})
-		// 	.then(function (email) {
-
-		// 		 existeMail = email;
-
-		// 		if (req.body.email == "") {
-		// 			errores.message = "No puede estar vacio este campo";
-		// 			res.locals.error = errores;
-		// 			res.render("registracion")
-		// 		} else if (req.body.password == "") {
-		// 			errores.message = "Falta la contraseña!!";
-		// 			res.locals.error = errores;
-		// 			res.render("registracion")
-		// 		} else if (existeMail != "") { // != significa not equal to 
-		// 			errores.message = "Este mail ya esta en uso.";
-		// 			res.locals.error = errores;
-		// 			res.render("registracion")
-		// 		} else {
-		// 			let encriptPass = bcrypt.hashSync(req.body.password, 10)
-		// 			db.usuario.create({
-		// 					nombre: req.body.username,
-		// 					email: req.body.email,
-		// 					password: encriptPass,
-		// 					fecha: req.body.fecha,
-		// 					createdAt: Date.now()
-		// 				})
-		// 				.then(_users => {
-		// 					res.redirect('/')
-		// 				})
-		// 				.catch(err => {
-		// 					console.log(err);
-		// 					res.send(err)
-		// 				})
-		// 		}
-		// 	})//
 	 req.body.password = bcrypt.hashSync(req.body.password)
 		const usuarioCreado ={ 
 			nombre:req.body.nombre ,
