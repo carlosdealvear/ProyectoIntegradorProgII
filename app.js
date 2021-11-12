@@ -61,15 +61,6 @@ app.use(function (req, res, next) {
   else {next()}
   
 })
-app.use(function(req, res, next){
-  if(req.session.user != undefined){
-    res.locals.user = req.session.user
-  }
-  next();
-})
-
-
-
   // render the error page
   res.status(err.status || 500);
   res.render('error');
