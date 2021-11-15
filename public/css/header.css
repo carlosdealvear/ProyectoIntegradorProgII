@@ -112,6 +112,8 @@ li, a, button {
 .logo{
     cursor: pointer;
     margin-right: auto;
+    height: 60px;
+    width: 60px;
 }
 
 .nav__links {
