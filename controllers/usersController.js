@@ -21,7 +21,7 @@ const usersController = {
       res.cookie("id_usuario", user.id,{
         maxAge : 1000 * 60 * 60 * 24
       } )
-     return res.redirect ("index")
+     return res.redirect ("/index")
    }
  })
  .catch(err => {
