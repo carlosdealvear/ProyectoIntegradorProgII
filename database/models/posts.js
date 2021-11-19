@@ -21,12 +21,19 @@ module.exports = function(sequelize, dataTypes){
 	}
     
 	let conf= {
-	    tableName: 'posts', 
+	    tableName: 'posteo', 
 	    timestamps: false, 
 	    underscored: true,        
 	}
+	
     
        const posts = sequelize.define(alias, columnas, conf);
-    
+		posts.associate= function(models){
+
+        posts.belongsTo(models.usuario, {
+            as: "creador",
+            foreignKey: "id_usuario"
+        })
+		}
        return posts;
     }

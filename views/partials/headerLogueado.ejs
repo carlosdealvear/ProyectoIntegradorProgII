@@ -12,13 +12,17 @@
       <img class="logo" src="/images/dispoLogo.png" alt="logo">
       <nav>
         <ul class="nav__links">
-            <li><a href="/index">Home</a></li>
-            <li><a href="/users/logout">Logout</a></li>
-            <li><a href="/users/registracion">Registracion</a></li>
+            <a class="cta" href="/index"><button>Home</button></a>
+
+            <li><form action="/resultadoBusqueda" method="get">
+              <input type="text" class="text" name="search" placeholder="Buscar Posteo" href="/resultadoBusqueda">
+              <button>Buscar</button>
+            </form></li>
+            <a class="cta" href="/post/agregarPost"><button>Agregar Post</button></a>
+      <a class="cta" href="/users/miPerfil"><button>Mi Perfil</button></a>
         </ul>
       </nav>
-      <a class="cta" href="/post/agregarPost"><button>Agregar Post</button></a>
-      <a class="cta" href="/users/miPerfil"><button>Mi Perfil</button></a>
+      
     </header>
 </body>
 </html> 

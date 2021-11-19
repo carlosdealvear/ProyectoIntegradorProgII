@@ -38,6 +38,12 @@ module.exports = function(sequelize, dataTypes){
         underscored: true, 
     }
         const usuario = sequelize.define(alias, columnas, config);
+        usuario.associate= function(models){
 
+        usuario.hasMany(models.posts, {
+            as: "posts",
+            foreignKey: "id_usuario"
+        })
+        }
         return usuario;
 }

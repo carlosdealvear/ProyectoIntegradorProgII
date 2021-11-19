@@ -1,13 +1,31 @@
 const posts = require('../module/posts');               
 const users = require('../module/users');
 const comentarios = require('../module/comentarios');
+const {json}= require("express")
+let db = require('../database/models');
+op = db.Sequelize.Op
 
 const indexController = {                               
   mostrarIndex: function (req, res) {
     res.render('index', {posts: posts.posts, comentarios: comentarios.comentarios, users: users.users});
   },
   mostrarResultadoBusqueda: function (req, res) {
-    res.render('resultadoBusqueda');
+    let buscado = req.query.search
+    let resultados =[]
+    db.posts.findAll({
+      where: {[op.or]: [{descrip: {[op.like]: `%${buscado}%`}}]}, 
+      include: [{association:"creador"}]
+    })
+    .then((result)=> {
+      for (let index = 0; index < result.length; index++) {
+        resultados.push(result[index].dataValues)
+        
+      }
+      return res.render('resultadoBusqueda', {buscado:buscado, resultados:result})
+    })
+    .catch((error)=>{
+      return res.send(error)
+    })
   },
 };
 
