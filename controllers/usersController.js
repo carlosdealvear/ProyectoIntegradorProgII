@@ -55,7 +55,34 @@ const usersController = {
     return res.redirect('/users/login');
   },
 
-};
+  detail: function(req, res){
+    db.User.findByPk(req.params.id,{
+        include: [{association: "creador"}, {association: "creador"}]
+    })
+    .then(detail => {
+        let loSigue = false
+        for(let i = 0; i < detail.seguidor.length; i++){
+            if(req.session.user.id == detail.seguidor[i].id){
+                loSigue = true
+            }
+        }
+        res.render("detalleUsuario",{detail: detail, loSigue: loSigue} )
+    },)
+},
+
+  profile: function(req, res){
+    if(req.session.user){
+        db.User.findByPk(req.session.user.id)
+        .then(user => {
+            res.render("detalleUsuario", {user: user})
+        })
+    } else {
+        res.redirect("/users/login")
+    }
+  },
+}
+
+
 
 module.exports = usersController;
 
