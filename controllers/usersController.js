@@ -56,7 +56,7 @@ const usersController = {
   },
 
   detail: function(req, res){
-    db.User.findByPk(req.params.id,{
+    db.usuario.findByPk(req.params.id,{
         include: [{association: "creador"}, {association: "creador"}]
     })
     .then(detail => {
