@@ -3,11 +3,7 @@
 
 	<%-include("./partials/header")%>
 <body>
-  <% if (users != true) { %>
-    <%- include("./partials/headerLogueado") %>
-    <% } else { %>
-      <%- include("./partials/headerDeslogueado") %>
-    <% } %>
+    <%-include("./partials/headerLogueado")%>
    
     <% if(resultados.length == 0) {%>
       <h1>No se encontraron resultados</h1>

@@ -4,11 +4,7 @@
     <%-include('./partials/header')%>
 
 <body>
-  <% if (users != true) { %>
-    <%- include("./partials/headerLogueado") %>
-    <% } else { %>
-      <%- include("./partials/headerDeslogueado") %>
-    <% } %>
+    <%-include('./partials/headerDeslogueado')%>
 
     <main>
         <div class="uk-section uk-section-small">
