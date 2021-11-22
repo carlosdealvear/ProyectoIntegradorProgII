@@ -7,6 +7,7 @@ router.post('/registracion', registracionController.registrar)
 router.get('/registracion', registracionController.registracion)
 router.get('/login', usersController.mostrarLogin);
 router.post('/login', usersController.autenticarUsuario)
+//
 router.get('/logout', usersController.logout)
 router.get('/detalleUsuario/:id', usersController.mostrarDetalleUsuario);
 router.get('/miPerfil/id', usersController.mostrarMiPerfil);
