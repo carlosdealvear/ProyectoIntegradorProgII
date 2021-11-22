@@ -18,14 +18,6 @@ module.exports = function(sequelize, dataTypes){
         fecha:{
             type: dataTypes.DATE,
         },
-        createdAt: {
-            type: dataTypes.DATE,
-            field: "created_at"
-        },
-        updatedAt: {
-            type: dataTypes.DATE,
-            field: "updated_at"
-        }
     }
 
     let config = {

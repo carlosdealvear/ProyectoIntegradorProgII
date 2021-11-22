@@ -29,14 +29,7 @@ module.exports = function(sequelize, dataTypes){
         username:{
             type: dataTypes.INTEGER,
         },
-        createdAt: {
-            type: dataTypes.DATE,
-            field: "created_at"
-        },
-        updatedAt: {
-            type: dataTypes.DATE,
-            field: "updated_at"
-        }
+        
     }
 
     let config = {
