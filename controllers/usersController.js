@@ -2,8 +2,6 @@ const db = require('../database/models');
 const posts = require('../module/posts');
 const users = require('../module/users');
 const bcrypt = require('bcryptjs');
-op = db.Sequelize.Op
-
 
 const usersController = {
   mostrarLogin: function (req, res) {
@@ -37,7 +35,7 @@ const usersController = {
     let user = users.porId(userId);
     let postUsuario = posts.porId(userId);
       if (user) {
-        res.render('detalleUsuario/:id', { users: users.users, userId : userId, postUsuario, posts: posts.posts}); 
+        res.render('detalleUsuario', { users: users.users, userId : userId, postUsuario, posts: posts.posts}); 
       } else {
         return "error";
       }
@@ -47,26 +45,9 @@ const usersController = {
   mostrarEditarPerfil: function (req, res) {
     res.render('editarPerfil');
   },
-
   mostrarMiPerfil: function (req, res) {
-    let userId = req.params.id;
-    let user = users.findByPk(userId);
-    let postUsuario = posts.findAll(userId({where: {
-      [op.or]: [{
-        descrip: {
-          [op.like]: `%${buscado}%`
-        }
-      }]
-    },
-    include: [{
-      association: "creador"
-    }]}));
-      if (user) {
-        res.render('detalleUsuario/id:', { users: users.users, userId : userId, postUsuario, posts: posts.posts}); 
-      } else {
-        return "error";
-      }
-    },
+    res.render('miPerfil', {user: users, posts: posts});
+  },
 
   logout: function (req, res) {
     req.session.destroy()
@@ -74,7 +55,33 @@ const usersController = {
     return res.redirect('/users/login');
   },
 
+  detail: function(req, res){
+    db.usuario.findByPk(req.params.id,{
+        include: [{association: "creador"}, {association: "creador"}]
+    })
+    .then(detail => {
+        let loSigue = false
+        for(let i = 0; i < detail.seguidor.length; i++){
+            if(req.session.user.id == detail.seguidor[i].id){
+                loSigue = true
+            }
+        }
+        res.render("detalleUsuario",{detail: detail, loSigue: loSigue} )
+    },)
+},
+
+  profile: function(req, res){
+    if(req.session.user){
+        db.User.findByPk(req.session.user.id)
+        .then(user => {
+            res.render("detalleUsuario", {user: user})
+        })
+    } else {
+        res.redirect("/users/login")
+    }
+  },
 }
+
 
 
 module.exports = usersController;

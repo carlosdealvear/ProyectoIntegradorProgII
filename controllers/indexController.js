@@ -1,9 +1,10 @@
-let db = require('../database/models');
 const posts = require('../module/posts');
 const users = require('../module/users');
 const comentarios = require('../module/comentarios');
 const {
-  json} = require("express")
+  json
+} = require("express")
+let db = require('../database/models');
 op = db.Sequelize.Op
 
 const indexController = {
