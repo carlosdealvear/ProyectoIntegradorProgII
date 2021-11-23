@@ -48,7 +48,7 @@ app.use(function(req, res, next){
       console.log('en cookie middleware trasladando');
       req.session.users = user; //Estamos poniendo en session a toda la instancia del modelo. Debería ser solo user.dataValues.
       console.log('en cookie middleware');
-      console.log(req.sessions.user);
+      console.log(req.session.user);
       res.locals.user = user; //Se corrije si usamos user.dataValues
       return next();
     })
