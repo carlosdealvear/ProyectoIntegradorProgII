@@ -33,6 +33,10 @@ module.exports = function(sequelize, dataTypes){
         posts.belongsTo(models.usuario, {
             as: "creador",
             foreignKey: "id_usuario"
+        }),
+		posts.hasMany(models.comentarios, {
+            as: "comentarios",
+            foreignKey: "id_posteo"
         })
 		}
        return posts;
