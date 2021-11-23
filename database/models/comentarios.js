@@ -28,8 +28,8 @@ module.exports = function(sequelize, dataTypes){
     const comentarios = sequelize.define(alias, columnas, config);
     comentarios.associate = function(models){
         comentarios.belongsTo(models.usuario,{
-            as: 'Usuario',
-            foreignKey: 'usuario_id'
+            as: 'usuario',
+            foreignKey: 'id_usuario'
         })
     }
         return comentarios;
