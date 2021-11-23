@@ -27,7 +27,7 @@ saveUninitialized: true}));
  
 app.use((req,res,next)=>{
  if(req.session.user != undefined){
-   res.locals = req.session.user
+   res.locals.user = req.session.user
    }
    return next()
 })
@@ -37,7 +37,7 @@ app.use((req, res, next) => {
      .then(resultado =>{
        console.log(resultado)
        req.session.user = resultado
-       res.locals = req.session.user
+       res.locals.user = req.session.user
        console.log(req.session.user.id)
      })
      .catch( error => console.log(error))
