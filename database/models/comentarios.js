@@ -6,7 +6,7 @@ module.exports = function(sequelize, dataTypes){
             primaryKey: true,
             type: dataTypes.INTEGER,
         },
-        id_posteo:{
+        id_posts:{
             type: dataTypes.INTEGER,
         },
         id_usuario:{
@@ -30,6 +30,10 @@ module.exports = function(sequelize, dataTypes){
         comentarios.belongsTo(models.usuario,{
             as: 'usuario',
             foreignKey: 'id_usuario'
+        });
+        comentarios.belongsTo(models.posts,{
+            as: 'posts',
+            foreignKey: 'id_posts'
         })
     }
         return comentarios;

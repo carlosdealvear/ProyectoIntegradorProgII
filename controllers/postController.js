@@ -1,5 +1,5 @@
 let db = require('../database/models');
-op = db.Sequelize.Op
+const op = db.Sequelize.Op
 const posts = db.posts
 const users = db.users
 const comentarios = db.comentarios
@@ -10,7 +10,7 @@ const postController = {
   },
   mostrarDetallePost: function (req, res) {
     let postId = req.params.id;
-    posts.findByPk(postId, {
+    db.posts.findByPk(postId, {
       include: [{
         association: "comentarios"
       }]
@@ -20,14 +20,15 @@ const postController = {
   },
 
 store: function(req, res){
-  console.log(res)  
+  console.log("hola" + req.session)  
   db.posts.create({      
-          id_usuario: res.session.id_usuario,
+          id_usuario: req.session.user.id,
           img: req.body.imagen,
           descrip: req.body.descripcion,
+          fecha: 000,
     })
-    .then(movie => {
-        res.redirect('/detalleUsuario')
+    .then(post => {
+        res.redirect('/index')
     })
     .catch(err => {
         console.log(err);

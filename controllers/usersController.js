@@ -1,6 +1,4 @@
 const db = require('../database/models');
-const posts = require('../module/posts');
-const users = require('../module/users');
 const bcrypt = require('bcryptjs');
 op = db.Sequelize.Op
 
@@ -32,16 +30,16 @@ const usersController = {
 
   },
 
-  mostrarDetalleUsuario: function (req, res) {
-    let userId = req.params.id;
-    let user = users.porId(userId);
-    let postUsuario = posts.porId(userId);
-      if (user) {
-        res.render('detalleUsuario/:id', { users: users.users, userId : userId, postUsuario, posts: posts.posts}); 
-      } else {
-        return "error";
-      }
-    },
+  mostrarDetalleUsuario: function(req, res, next) {
+      db.usuario.findByPk(req.params.id)    
+      .then(usuario =>{
+          return res.render('/', {usuario: usuario} )
+      })
+      .catch(error =>{ 
+          console.log(error)
+          return res.send(error)
+      })
+  },
 
 
   mostrarEditarPerfil: function (req, res) {
@@ -62,7 +60,7 @@ const usersController = {
       association: "creador"
     }]}));
       if (user) {
-        res.render('detalleUsuario/id:', { users: users.users, userId : userId, postUsuario, posts: posts.posts}); 
+        res.render('/users/detalleUsuario/'+ userId, { users: users.users, userId : userId, postUsuario, posts: posts.posts}); 
       } else {
         return "error";
       }

@@ -31,7 +31,7 @@ const registracionController = {
 	},
 	//la parte del login etcetera
 	login: function (req, res) {
-		if (req.session.users == undefined) {
+		if (req.session.user == undefined) {
 			res.render('login')
 		} else {
 			res.redirect("/")

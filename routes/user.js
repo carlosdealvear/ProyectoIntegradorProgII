@@ -10,7 +10,7 @@ router.post('/login', usersController.autenticarUsuario)
 //
 router.get('/logout', usersController.logout)
 router.get('/detalleUsuario/:id', usersController.mostrarDetalleUsuario);
-router.get('/miPerfil/id', usersController.mostrarMiPerfil);
+router.get('/miPerfil', usersController.mostrarMiPerfil);
 router.get('/editarPerfil', usersController.mostrarEditarPerfil);
 
 
