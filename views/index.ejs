@@ -1,23 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <%-include("./partials/header")%>
-
-<head>
-    <link rel="stylesheet" href="/public/css/footer.css">
-</head>
-
-<body>
-    <% if (users != true) { %>
-    <%- include("./partials/headerLogueado") %>
-    <% } else { %>
-    <%- include("./partials/headerLogueado") %>
-    <% } %>
     <main class="general">
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex">
                 <section id="posts"
                     class="uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-child-width-1-2 uk-width-1-1">
-                    <% for (let index = 0; index < posts.length; index++) {  %>
+                    <% for (let index = 0; index < posteos.length; index++) {  %>
                     <article class="post uk-card-default uk-flex uk-flex-column">
                         <div class="info-usuario uk-flex ">
                             <div>
@@ -27,8 +16,8 @@
 
                         </div>
                         <div class="post-body uk-flex uk-flex-center">
-                            <a href="/post/detallePost/id/<%= posts[index].id  %>">
-                                <img src="<%= posts[index].img %> " alt="">
+                            <a href="/post/detallePost/id/<%= posteos[index].id  %>">
+                                <img src="/fotosPosts/<%= posteos[index].img %> " alt="">
                             </a>
                         </div>
                         <div class="post-reacciones">
@@ -40,27 +29,14 @@
                             </ul>
 
                             <div class="post-pie uk-flex">
-                                <h5 class="uk-width-1-6"><a href="users/detalleUsuario/<%= posts[index].userId %> ">
-                                        <%= posts[index].usuario %> </a></h5>
-                                <p class="uk-width-5-6"><%= posts[index].descrip %></p>
+                                <h5 class="uk-width-1-6"><a href="users/detalleUsuario/<%= posteos[index].creador.id %> ">
+                                        <%= posteos[index].creador.username %> </a></h5>
+                                <p class="uk-width-5-6"><%= posteos[index].descrip %></p>
                             </div>
                             
                         </div>
                         <div class="post-comentarios">
-                            <h6>Comentarios</h6>
-                            <ul>
-
-                                <% for(i=0;i<comentarios.length; i++){ %>
-                                <% if(posts[index].id == comentarios[i].postId) {%>
-                                <li>
-                                    <a href="/users/detalleUsuario/<%= comentarios[i].userId %> "><%= comentarios[i].usuario %>
-                                    </a> </a>
-                                    <p><%= comentarios[i].descrip%> </p>
-                                </li>
-                                <%} }%>
-
-                                <a href="users/detalleUsuario/<%= posts[index].userId %> ">Ver más...</a>
-                            </ul>
+                            <h6>Comentarios: <%= posteos[index].Comentarios.length %> </h6>
                         </div>
                     </article>
                     <%}%>

@@ -27,3 +27,33 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/js/uikit-icons.min.js"></script>
 </head>
+
+<body>
+    <header>
+      <img class="logo" src="/images/dispoLogo.png" alt="logo">
+      <nav>
+        <ul class="nav__links">
+          <a class="cta" href="/index"><button>Home</button></a>
+  
+          <li>
+            <form action="/resultadoBusqueda" method="get">
+              <input type="text" class="text" name="search" placeholder="Buscar Posteo" href="/resultadoBusqueda">
+              <button>Buscar</button>
+            </form>
+          </li>
+          <% console.log(locals.users)%> 
+          <% if(locals.users) {%> 
+          <a class="cta" href="/post/agregarPost"><button>Agregar Post</button></a>
+          <a class="cta" href="/users/detalleUsuario/:id"><button>Mi Perfil</button></a>
+          <li><a href="/users/logout">Logout</a></li>
+          <%} else{ %> 
+          <a class="cta" href="/index"><button>Home</button></a>
+          <a class="cta" href="/users/login"><button>Login</button></a>
+          <a class="cta" href="/users/registracion"><button>Registrate</button></a>
+          <%}%>
+        </ul>
+      </nav>
+  
+    </header>
+ 
+  
