@@ -26,7 +26,7 @@ resave:false,
 saveUninitialized: true}));
  
 app.use((req,res,next)=>{
- if(req.session.user != undefined){
+ if(req.session.user != undefined){ //no es igual a 
    res.locals.user = req.session.user
    }
    return next()

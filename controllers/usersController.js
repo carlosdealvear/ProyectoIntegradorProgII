@@ -15,9 +15,9 @@ const usersController = {
  .then(function(user){
   if(bcrypt.compareSync(req.body.password, user.password))
    {
-     req.session.user = user;
+     req.session.user = user;  //al momento de querer definir y almacenar info, llamamos a la propiedad session del objeto request 
       res.cookie("id_usuario", user.id,{
-        maxAge : 1000 * 60 * 60 * 24
+        maxAge : 1000 * 60 * 60 * 24 // 86400000 ms
       } )
      return res.redirect ("/index")
    }

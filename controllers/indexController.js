@@ -7,18 +7,18 @@ const {
 op = db.Sequelize.Op
 
 const indexController = {
+  // franco 
   mostrarIndex: function (req, res) {
     db.posts.findAll({
       include: [
         {
           all: true,
-          nested: true //Fetch all models associated with User and their nested associations (recursively)
+          nested: true // all models associated with User and their nested associations
       }
       ],
       order: [['fecha', 'DESC'],] //will escape fecha and validate DESC against a list of valid direction parameters
       })
       .then(posteos => {
-        console.log(posteos[0])
         return res.render('index', {posteos: posteos})
       })
       .catch(error => {
@@ -26,6 +26,7 @@ const indexController = {
       });
 
   },
+  //karlos
   mostrarResultadoBusqueda: function (req, res) {
     let buscado = req.query.search
     let resultados = []
