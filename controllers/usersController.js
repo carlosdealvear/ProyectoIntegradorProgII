@@ -4,6 +4,7 @@ op = db.Sequelize.Op
 
 
 const usersController = {
+  //franco
   mostrarLogin: function (req, res) {
     res.render('login');
   },
@@ -15,9 +16,6 @@ const usersController = {
   if(bcrypt.compareSync(req.body.password, user.password))
    {
      req.session.user = user;
-     if(req.session.user){
-       console.log("andando");
-     }
       res.cookie("id_usuario", user.id,{
         maxAge : 1000 * 60 * 60 * 24
       } )
@@ -29,7 +27,7 @@ const usersController = {
  })
 
   },
-
+//carlos
   mostrarDetalleUsuario: function(req, res, next) {
       db.usuario.findByPk(req.params.id)    
       .then(usuario =>{
@@ -71,7 +69,7 @@ const usersController = {
         return "error";
       }
     },
-
+//franco 
   logout: function (req, res) {
     req.session.destroy()
     res.clearCookie("id_usuario")
