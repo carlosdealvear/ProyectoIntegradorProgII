@@ -19,6 +19,11 @@ router.get('/agregarPost', postController.mostrarAgregarPost);
 router.post('/agregarPost', upload.single("imagen") , postController.store)
 router.get('/detallePost/id/:id', postController.mostrarDetallePost);
 router.post('/detallePost/id/:id', postController.agregarComentarios);
+router.post('/detallePost/id/:id/eliminar', postController.eliminar)
+router.post('/detallePost/id/:id/borrar/:comentario', postController.borrar)
+router.get('/editarPost/id/:id', postController.editarPost)
+router.post('/editarPost/id/:id', postController.editarPosteo)
+
 
 
 

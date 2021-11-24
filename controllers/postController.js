@@ -1,7 +1,6 @@
 let db = require('../database/models');
 const op = db.Sequelize.Op
-const {where, Error} = require("sequelize")
-
+const {where} = require("sequelize");
 
 const postController = {
   mostrarAgregarPost: function (req, res) {                 
@@ -25,10 +24,41 @@ const postController = {
             }]
         })
         .then(comentarios => {
-            console.log(comentarios)
             res.render('detallePost', { post: data, postId: postId, comentarios: comentarios }) })                           
         })
     .catch(err => console.log(err))  
+  },
+
+  editarPost: function (req, res) {   
+
+            res.render('editarPost' );                            
+                      
+  },
+
+  editarPosteo: function (req, res) {  
+    let idPosteo = req.params.id;
+
+    let posteo = {
+        id_usuario: req.session.user.id,
+        descrip: req.body.descripcion,
+        fecha: 000,
+        img:""
+      }
+      if (req.file) {
+          posteo.img = req.file.fieldname
+      }
+
+  db.posts.update(posteo, {
+    where: {
+      id: idPosteo,
+    },
+  })
+    .then((resultados) => {
+      res.redirect("/users/detalleUsuario/" + req.session.user.id);
+    })
+    .catch((error) => {
+      return res.send(error);
+    });                                     
   },
 
   agregarComentarios: function (req, res) {                 
@@ -49,7 +79,6 @@ const postController = {
   },
 
 store: function(req, res){
-  console.log("hola" + req.session)  
   let posteo = {
     id_usuario: req.session.user.id,
     descrip: req.body.descripcion,
@@ -70,49 +99,49 @@ store: function(req, res){
     })
 
 },
-edit: function(req, res){
-
-    let posts = db.post.findByPk(req.params.id)
-    
-    let comentarios = db.Genre.findAll()
-
-    Promise.all([pelicula, genres])
-    .then(([pelicula, genres]) => {
-        res.render('editMovie',{genres: genres, pelicula: pelicula})
+eliminar: function(req, res){
+    let id = req.params.id
+    db.comentarios.destroy({
+        where: {
+            id_posteo: id
+        }
+    })
+    .then(posteitos =>{
+    db.posts.destroy({
+        where: {
+            id: id
+        }
+    })
+    .then(post => {
+        
+            res.redirect('/index')  
+        })
+        
     })
     .catch(err => {
-        console.log(err)
+        console.log(err);
+        res.send(err)
+    })
+    .catch(err => {
+        console.log(err);
         res.send(err)
     })
 },
-update: function(req, res){
-
+borrar: function(req, res){
     let id = req.params.id
-    
-    posts.update({
-      id_usuario: 1,
-      img: req.body.imagen,
-      descrip: req.body.descripcion,
-    },
-    {
+    let idComentario = req.params.comentario
+    db.comentarios.destroy({
         where: {
-            id: id
+            id: idComentario
         }
     })
-    .then(movie => {
-        res.redirect("detalleUsuario/:id" + id)
-    })
-
-},
-delete: function(req, res){
-    let id = req.params.id
-    posts.destroy({
-        where: {
-            id: id
-        }
-    })
-    .then(movie => {
-        res.redirect('/detalleUsuaio')
+    .then(post => {
+        
+            res.redirect('/post/detallePost/id/' + id)  
+        })
+    .catch(err => {
+        console.log(err);
+        res.send(err)
     })
 },
 

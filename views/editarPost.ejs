@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include("./partials/header")%>
+    <main>
+        <div class="uk-section uk-section-small">
+            <div class="uk-container uk-container-large uk-flex">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <h2>Editar post</h2>
+
+                          <div class="form-group">
+                            <label for="descripcion"> Descripción</label>
+                            <input name="descripcion" type="text" class="form-control" id="descripcion" placeholder="pone nuevo pie de foto">
+                          </div>
+    
+                        <button type="submit" class="botonEnviar">Confirmar</button>
+                
+                </form>
+
+            </div>
+        </div>
+    </main>
+    
+    <%-include("./partials/footers")%>
+</body>
+
+</html>

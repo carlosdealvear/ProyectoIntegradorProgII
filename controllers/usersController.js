@@ -46,9 +46,7 @@ const usersController = {
   },
 
 
-  mostrarEditarPerfil: function (req, res) {
-    res.render('editarPerfil');
-  },
+  
 
   mostrarMiPerfil: function (req, res) {
     let userId = req.params.id;
