@@ -33,7 +33,13 @@ const usersController = {
   mostrarDetalleUsuario: function(req, res, next) {
       db.usuario.findByPk(req.params.id)    
       .then(usuario =>{
-          return res.render('/', {usuario: usuario} )
+        db.posts.findAll({
+          where: { id_usuario: req.params.id}          
+        })
+        .then(posteosUsuario =>{
+          console.log(posteosUsuario)
+          return res.render('detalleUsuario', {usuario: usuario, posteosUsuario: posteosUsuario} )
+        })
       })
       .catch(error =>{ 
           console.log(error)

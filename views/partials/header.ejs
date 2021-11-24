@@ -44,7 +44,7 @@
           <% console.log(locals.user)%> 
           <% if(locals.user) {%> 
           <a class="cta" href="/post/agregarPost"><button>Agregar Post</button></a>
-          <a class="cta" href="/users/detalleUsuario/:id"><button>Mi Perfil</button></a>
+          <a class="cta" href="/users/detalleUsuario/<%= locals.user.id %> "><button>Mi Perfil</button></a>
           <li><a href="/users/logout">Logout</a></li>
           <%} else{ %> 
           <a class="cta" href="/index"><button>Home</button></a>

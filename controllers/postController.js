@@ -1,32 +1,66 @@
 let db = require('../database/models');
 const op = db.Sequelize.Op
-const posts = db.posts
-const users = db.users
-const comentarios = db.comentarios
+const {where, Error} = require("sequelize")
+
 
 const postController = {
   mostrarAgregarPost: function (req, res) {                 
     res.render('agregarPost');                            
   },
+
   mostrarDetallePost: function (req, res) {
     let postId = req.params.id;
     db.posts.findByPk(postId, {
       include: [{
-        association: "comentarios"
+        association: "creador"
       }]
     })
-    .then((data)=> res.render('detallePost', { posts: data, postId: postId, comentarios: data.comentarios }))                            
+    .then((data)=>{
+        db.comentarios.findAll({
+            where: {
+                id_posteo: postId
+            }, 
+            include: [{
+                association: "usuario"
+            }]
+        })
+        .then(comentarios => {
+            console.log(comentarios)
+            res.render('detallePost', { post: data, postId: postId, comentarios: comentarios }) })                           
+        })
     .catch(err => console.log(err))  
+  },
+
+  agregarComentarios: function (req, res) {                 
+    let postId = req.params.id
+    db.comentarios.create({      
+        id_posteo: postId,
+        id_usuario: req.session.user.id,
+        texto: req.body.text,
+        fecha: 000,
+  })
+  .then(post => {
+      res.redirect('/post/detallePost/id/' + postId)
+  })
+  .catch(err => {
+      console.log(err);
+      res.send(err)
+  })
   },
 
 store: function(req, res){
   console.log("hola" + req.session)  
-  db.posts.create({      
-          id_usuario: req.session.user.id,
-          img: req.body.imagen,
-          descrip: req.body.descripcion,
-          fecha: 000,
-    })
+  let posteo = {
+    id_usuario: req.session.user.id,
+    descrip: req.body.descripcion,
+    fecha: 000,
+    img:""
+  }
+  if (req.file) {
+      posteo.img = req.file.fieldname
+  }
+
+  db.posts.create(posteo)
     .then(post => {
         res.redirect('/index')
     })
@@ -38,7 +72,7 @@ store: function(req, res){
 },
 edit: function(req, res){
 
-    let posts = db.Movie.findByPk(req.params.id)
+    let posts = db.post.findByPk(req.params.id)
     
     let comentarios = db.Genre.findAll()
 
