@@ -11,29 +11,30 @@
                     <div class="uk-width-2-3 uk-flex uk-flex-column uk-flex-around">
                         <div class="uk-flex uk-flex-middle">
                             <h3 class="uk-margin-remove"><%= usuario.username%> </h3>
-                            <button class="uk-button uk-button-small uk-button-primary uk-margin-left">Seguir</button>
+                            <button class="uk-button uk-button-small uk-button-secondary uk-margin-left">Seguir</button>
                         </div>
-                        <div>
+                        
+                        <div class="data del seguidor">
                             <ul class="red-usuario uk-flex uk-flex-between uk-width-1-2">
-                                <li>100 posts</li>
+                                <li><%= posteosUsuario.length %> posts</li>
                                 <li>200 seguidores</li>
                                 <li>300 seguidos</li>
                             </ul>
                         </div>
                     </div>
                </section>
-               <%for(let i=0; i<posteosUsuario.length; i++){ %>
                <section class="muro uk-flex uk-flex-middle uk-flex-center">
                     <div class="uk-grid uk-child-width-1-3 uk-width-1-1 uk-margin-remove" uk-grid>
+                        <%for(let i=0; i<posteosUsuario.length; i++){ %>
                          <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
                             <a href="/post/detallePost/id/<%= posteosUsuario[i].id %> " class="link-detalle">
                                 <img src="/fotosPosts/<%= posteosUsuario[i].img  %> " alt="foto" class="foto">
                                 <p class="uk-text-center"><%= posteosUsuario[i].descrip %> </p>
                             </a>
                         </div>   
+                        <% } %>
                     </div>
                </section>
-               <% } %>
             </div>
         </div>
     </main>

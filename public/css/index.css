@@ -145,3 +145,20 @@ div.form-group{
         height: 200px;
 
 }
+
+
+.info-usuario .red-usuario{
+    list-style: none;
+    padding: 0  ;
+    color: green;
+}
+
+.muro{
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid green;
+}
+.muro .link-detalle{
+    color: green;
+    text-decoration: none;
+}

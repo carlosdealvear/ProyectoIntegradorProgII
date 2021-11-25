@@ -16,8 +16,8 @@ const registracionController = {
 		const usuarioCreado ={ 
 			nombre:req.body.nombre ,
 			apellido:req.body.apellido ,
-			username:req.body.username ,
 			email:req.body.email ,
+			username:req.body.username ,
 			password:req.body.password ,
 			fecha:req.body.fecha,
 		} 
