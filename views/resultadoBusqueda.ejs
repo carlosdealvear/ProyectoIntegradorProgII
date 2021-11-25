@@ -6,20 +6,54 @@
     <% if(resultados.length == 0) {%>
       <h1>No se encontraron resultados</h1>
     <% }%>
-    <ul>
-        <% for(let i = 0; i < resultados.length; i++) { %> 
-  
-          <li>
-            <h3><a href="/users/detalleUsuario/<%= resultados[i].id_usuario %>"><%=resultados[i].creador.username %></a></h3>
-            <a href="/post/detallePost/id/<%= resultados[i].id %>"><img src="/fotosPosts/<%=resultados[i].img %>" alt=""> <p><%=resultados[i].descrip %></p> </a>          
-            
-          </li>
-  
-        <% } %>
-      </ul>
+   
+      <main class="general">
+        <div class="uk-section uk-section-small">
+            <div class="uk-container uk-container-large uk-flex">
+                <section id="posts"
+                    class="uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-child-width-1-2 uk-width-1-1">
+      <% for(let i = 0; i < resultados.length; i++) { %> 
+        <article class="post uk-card-default uk-flex uk-flex-column">
+            <div class="info-usuario uk-flex ">
+                <div>
+                    <img src="/post/post" alt="">
+                </div>
+                <h4><a href="/name/:name"></a></h4>
 
+            </div>
+            <div class="post-body uk-flex uk-flex-center">
+                <a href="/users/detalleUsuario/<%= resultados[i].id_usuario %>">
+                    <img src="/fotosPosts/<%=resultados[i].img %>" alt="">
+                </a>
+            </div>
+            <div class="post-reacciones">
+                <ul class="post-icons uk-flex uk-flex-between">
+                    <li><span class="" uk-icon="icon:heart; ratio: 1.3"></span>
+                    </li>
+                    <li><span class="" uk-icon="icon:comments; ratio: 1.3"></span>
+                    </li>
+                </ul>
 
+                <div class="post-pie uk-flex">
+                    <h5 class="uk-width-1-6"><a href="/users/detalleUsuario/<%= resultados[i].id_usuario %>">
+                      <%=resultados[i].creador.username %> </a></h5>
+                    <p class="uk-width-5-6"><%=resultados[i].descrip %></p>
+                </div>
+                
+            </div>
+            <div class="post-comentarios">
+                <h6>Comentarios:</h6>
+            </div>
+        </article>
+        <%}%>
+      </section>
+
+            </div>
+        </div>
+    </main>
 
 </body>
-<%-include("./partials/footer")%>
+
+<%-include("./partials/footers")%>
+
 </html>

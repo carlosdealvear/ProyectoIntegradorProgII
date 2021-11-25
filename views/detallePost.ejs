@@ -12,7 +12,7 @@
                     <% } %>
                     <% if(locals.user && user.id == post.creador.id) {%>
 
-                        <a href="/post/editarPost/id/<%= post.id %>">Editar</a>
+                    <a href="/post/editarPost/id/<%= post.id %>">Editar</a>
 
                     <% } %>
                     <article class="uk-width-2-3 uk-flex uk-flex-center uk-flex-middle detalle-post">
@@ -57,5 +57,5 @@
 
 
 </body>
-<%-include("./partials/footer")%>
+<%-include("./partials/footers")%>
 </html>

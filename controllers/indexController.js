@@ -16,7 +16,7 @@ const indexController = {
           nested: true // all models associated with User and their nested associations
       }
       ],
-      order: [['fecha', 'DESC'],] //will escape fecha and validate DESC against a list of valid direction parameters
+      order: [['fecha', 'ASC']], //will escape fecha and validate DESC against a list of valid direction parameters
       })
       .then(posteos => {
         return res.render('index', {posteos: posteos})
@@ -40,7 +40,8 @@ const indexController = {
         },
         include: [{
           association: "creador"
-        }]
+        }],
+        order: [['fecha', 'ASC']], //will escape fecha and validate DESC against a list of valid direction parameters
       })
       .then((result) => {
         for (let index = 0; index < result.length; index++) {
